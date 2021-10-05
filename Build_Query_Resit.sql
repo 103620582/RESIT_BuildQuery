@@ -32,6 +32,19 @@ FK - (ItemID) References MENUITEM
 
 -- USE JAResit;
 
+DROP TABLE IF EXISTS ORGANISATION;
+GO
+DROP TABLE IF EXISTS CLIENT;
+GO
+DROP TABLE IF EXISTS MENUITEM;
+GO
+DROP TABLE IF EXISTS [ORDER];
+GO
+DROP TABLE IF EXISTS ORDERLINE;
+GO
+
+
+
 CREATE TABLE ORGANISATION (
     OrgID               NVARCHAR(4)
 ,   OrganisationName    NVARCHAR(200) NOT NULL
@@ -101,20 +114,24 @@ INSERT INTO MENUITEM (ItemID, Desceription, ServesPerUnit, UnitPrice) VALUES (43
 INSERT INTO MENUITEM (ItemID, Desceription, ServesPerUnit, UnitPrice) VALUES (4326, 'Can - Lemonade', 1, 2.50);
 INSERT INTO MENUITEM (ItemID, Desceription, ServesPerUnit, UnitPrice) VALUES (4327, 'Can - Harden Up', 1, 7.50);
 
-INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (12, '20/09/2021', 'Room TB225 - SUT - 1 John Street, Hawthorn, 3122');
-INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (21, '14/09/2021', 'Room ATC009 - SUT - 1 John Street, Hawthorn, 3122');
-INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (21, '27/09/2021', 'Room TB225 - SUT - 1 John Street, Hawthorn, 3122');
+INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (12, '2021-09-20', 'Room TB225 - SUT - 1 John Street, Hawthorn, 3122');
+INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (21, '2021-09-14', 'Room ATC009 - SUT - 1 John Street, Hawthorn, 3122');
+INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (21, '2021-09-27', 'Room TB225 - SUT - 1 John Street, Hawthorn, 3122');
+INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (15,	'2021-09-20',	'The George - 1 John Street, Hawthorn, 3122');
+INSERT INTO [ORDER] (ClientID, OrderDate, DeliveryAddress) VALUES (18,	'2021-09-30',	'Room TB225 - SUT - 1 John Street, Hawthorn, 3122');
 
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216, 12, '20/9/21',	2);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4326,	12,	'20/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3218,	21,	'14/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3214,	21,	'14/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4325,	21,	'14/9/21',	4);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	21,	'14/9/21',	2);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	21,	'27/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	21,	'27/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3218,	21,	'27/9/21',	2);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	15,	'20/9/21',	2);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4326,	15,	'20/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	18,	'30/9/21',	1);
-INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	18,	'30/9/21',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216, 12, '2021-09-20',	2);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4326,	12,	'2021-09-20',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3218,	21,	'2021-09-14',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3214,	21,	'2021-09-14',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4325,	21,	'2021-09-14',	4);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	21,	'2021-09-14',	2);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	21,	'2021-09-27',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	21,	'2021-09-27',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3218,	21,	'2021-09-27',	2);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	15,	'2021-09-20',	2);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4326,	15,	'2021-09-20',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (3216,	18,	'2021-09-30',	1);
+INSERT INTO ORDERLINE (ItemID, ClientID, OrderDate, Qty) VALUES (4327,	18,	'2021-09-30',	1);
+
+
